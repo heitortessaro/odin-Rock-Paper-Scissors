@@ -12,7 +12,7 @@ function playRound(playerSelection,computerSelection){
     const point = ".";
     if (playerSelection == computerSelection){
         result = "It is a tie! Both player selected ";
-        return result + playerSelection + point;
+        return [result + playerSelection + point, "tie"];
     } else if(playerSelection === "Paper" && computerSelection =="Rock"){
         result = "You Win! ";
     } else if(playerSelection === "Rock" && computerSelection =="Scisor"){
@@ -28,9 +28,9 @@ function playRound(playerSelection,computerSelection){
     }
     
     if (result == "You Win! "){
-        return result + playerSelection + beats + computerSelection + point;
+        return [result + playerSelection + beats + computerSelection + point, "Win"];
     } else {
-        return result + computerSelection + beats + playerSelection + point;
+        return [result + computerSelection + beats + playerSelection + point, "Lose"];
     }
 
 
@@ -48,5 +48,21 @@ function capitalize(phrase){
     return firstLetter.toUpperCase() + otherLetters.toLowerCase();
 }
 
-let playerSelection = playerPlay();
-alert(playRound(playerSelection,computerPlay()))
+function game(){
+    let computerWins = 0;
+    let playerWins = 0;
+
+    for(let i = 1; i <= 10; i++){
+        let playerSelection = playerPlay();
+        [phase, result] = playRound(playerSelection,computerPlay());
+        if (result == "Win"){
+            playerWins++;
+        } else if (result == "Lose"){
+            computerWins++;
+        }
+        alert(phase);
+        alert("You " + playerWins + " x Computer " + computerWins);
+    }
+}
+
+game();
