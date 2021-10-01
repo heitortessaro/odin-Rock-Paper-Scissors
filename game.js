@@ -27,12 +27,12 @@ function playRound(playerSelection, computerSelection) {
 function registerResult(result) {
   if (result == "Win") {
     playerScore++;
-    pPlayerScore.textContent = `${playerScore} points`;
-    resultMessage.textContent = 'You win!';
+    pPlayerScore.textContent = `${playerScore} POINTS`;
+    resultMessage.textContent = 'You won!';
   } else if (result == "Lose") {
     computerScore++;
-    pComputerScore.textContent = `${computerScore} points`;
-    resultMessage.textContent = 'Computer win!';
+    pComputerScore.textContent = `${computerScore} POINTS`;
+    resultMessage.textContent = 'Computer won!';
   } else {
     resultMessage.textContent = 'It is a tie!';
   }
@@ -60,8 +60,8 @@ function endGame(winner) {
 function resetGame() {
   computerScore = 0;
   playerScore = 0;
-  pPlayerScore.textContent = `${playerScore} points`;
-  pComputerScore.textContent = `${computerScore} points`;
+  pPlayerScore.textContent = `${playerScore} POINTS`;
+  pComputerScore.textContent = `${computerScore} POINTS`;
   btnsContainer.removeChild(msgResult);
   btnsContainer.removeChild(msgInfo);
   btnsContainer.removeChild(msgBtn);
@@ -116,7 +116,7 @@ const msgResult = document.createElement('h3');
 const msgInfo = document.createElement('p');
 msgInfo.textContent = 'Do you want to play again?';
 const msgBtn = document.createElement('button')
-msgBtn.classList.add('btn');
+msgBtn.classList.add('btnReset');
 msgBtn.textContent = 'Yes';
 
 

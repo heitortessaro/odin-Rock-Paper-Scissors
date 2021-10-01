@@ -1,25 +1,142 @@
-/*Style and color*/
+:root {
+    --colorblack: #000000;
+    --colorblue: #12398b;
+    --coloryellow: #e79105;
+    --colorgray: #E5E5E5;
+    --colorwhite: #FFFFFF;
+}
 
-body{
-    font-family: "Georgia", Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
     margin: 0;
-    background-color: wheat;
-
 }
 
-.btn{
-    /* min-width: 50px;
-    height: auto; */
-    background-color:white;
-    border-color: none;
-    border-radius: 10px;
-    
-    
+html {
+    /* footer support */
+    position: relative;
+    min-height: 100%;
+    background-color: var(--colorgray);
 }
 
-.btnImage{
-    min-height: 75px;
+.btnImage {
+    min-height: 100px;
     width: auto;
     border-radius: 5px;
 }
 
+.btnReset{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--coloryellow);
+    width: auto;
+    border-radius: 5px;
+    border: var(--colorblue) 2px solid;
+    background-color: var(--colorwhite);
+
+    
+}
+
+button {
+    border: none;
+    color: inherit;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    outline: none;
+    padding: 10px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    border-bottom: var(--coloryellow) 5px solid;
+}
+
+h1, h3, h4, h5, .pScore {
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    color: var(--colorblue);
+}
+
+h3 {
+    font-size: 24px;
+    color: var(--colorblue);
+    padding: 20px;
+}
+
+h4 {
+    margin-top: 10px;
+    text-shadow: 1px 1px var(--colorblue);
+}
+
+h5, h4 {
+    font-size: 24px;
+    padding: 10px;
+    color: var(--coloryellow);
+}
+
+p {
+    font-size: 20px;
+    color: var(--colorblue);
+    padding: 15px;
+}
+
+.pScore {
+    font-size: 24px;
+    color: var(--colorblue);
+    font-weight: 500;
+    padding: 15px;
+    width: max-content;
+    border: var(--colorblack) 3px solid;
+    border-radius: 10px;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    align-items: inherit;
+}
+
+.players {
+    display: flex;
+    justify-content: space-around;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btnsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.btnsDiv {
+    display: flex;
+    gap: 100px;
+
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    color: var(--colorblack);
+    background-color: wheat;
+    font-size: 20px;
+}
