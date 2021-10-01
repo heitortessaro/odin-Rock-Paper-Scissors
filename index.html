@@ -1,32 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Game Rock-Paper-Scisor</title>
-    <script src="game.js"></script>
-  </head>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Rock-Paper-Scisor</title>
+  <script src="game.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
-    <div class="mainContainer">
-      <h1>The Super Mega Blaster Rock-Paper-Scisor</h1>
-      <div class="information">
-          <h3>Scoreboard</h2>
-          <div class="players">
-              <h5> Your points</h5>  
-              <p>x points</p>
-              <h5> Computer points</h5>  
-              <p>y points</p>
-          </div>
-      </div>
-      <div class="btnsContainer">
-          <h3>Select you Action</h3>
-        <div class="btns">
-            <button id="rock" class="btn">Rock</button>
-            <button id="paper" class="btn">Paper</button>
-            <button id="scisor" class="btn">Scisor</button>
+  <div class="mainContainer">
+    <h1>The Super Mega Blaster Rock-Paper-Scisor</h1>
+    <div class="information">
+      <h3>Scoreboard</h2>
+        <div class="players">
+          <h5> Your points</h5>
+          <p id="playerScore">0 points</p>
+          <h5> Computer points</h5>
+          <p id="computerScore">0 points</p>
         </div>
+        <h4 id="resultMessage"></h4>
+    </div>
+    <div class="btnsContainer">
+      <h3 class="btnsMessage">Select you Action</h3>
+      <div class="btnsDiv">
+        <button class="btn" id="rockBtn"><img class="btnImage" src="./img/rock.svg" alt='Rock'/></button>
+        <button class="btn" id="paperBtn"><img class="btnImage" src="./img/paper.svg" alt='Paper'/></button>
+        <button class="btn" id="scisorBtn"><img class="btnImage" src="./img/scissors.svg" alt='Scisor'/></button>
       </div>
     </div>
-  </body>
+  </div>
+  <!-- <div class="endGameInfo" id="endGameInfo">
+    <p class="message bold" id="endGameMsg"></p>
+    <p class="message">Would you like to play again?</p>
+    <button class="btn" id="restartBtn">Play Again</button>
+  </div> -->
+  <footer class="footer">
+    <p>Copyright © 2021 heitortessaro</p>
+    <a href="https://github.com/heitortessaro"></a>
+  </footer>
+</body>
+
 </html>

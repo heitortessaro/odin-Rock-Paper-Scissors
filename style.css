@@ -1,0 +1,25 @@
+/*Style and color*/
+
+body{
+    font-family: "Georgia", Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    background-color: wheat;
+
+}
+
+.btn{
+    /* min-width: 50px;
+    height: auto; */
+    background-color:white;
+    border-color: none;
+    border-radius: 10px;
+    
+    
+}
+
+.btnImage{
+    min-height: 75px;
+    width: auto;
+    border-radius: 5px;
+}
+
