@@ -24,7 +24,7 @@ function playRound(playerSelection, computerSelection) {
   };
 };
 
-function registerResult(result) {
+function registerResult(result,playerSelection, computerSelection){
   if (result == "Win") {
     playerScore++;
     pPlayerScore.textContent = `${playerScore} POINTS`;
@@ -36,16 +36,18 @@ function registerResult(result) {
   } else {
     resultMessage.textContent = 'It is a tie!';
   }
-  console.log();
-  console.log(result);
-  console.log(playerScore);
-  console.log(computerScore);
+  resultText.textContent = `(Player) ${playerSelection} x ${computerSelection} (Computer) `;
+  resultText.classList.add('played');
+  resultMessage.classList.add('played');  
 }
 
 function endGame(winner) {
   btnsContainer.removeChild(btnsDiv);
   btnsContainer.removeChild(btnsMessage);
   resultMessage.textContent = '';
+  resultText.textContent = '';
+  resultDiv.removeChild(resultMessage);
+  resultDiv.removeChild(resultText);
   if (winner == 'player') {
     msgResult.textContent = 'You Won! 😀';
   } else {
@@ -55,6 +57,14 @@ function endGame(winner) {
   btnsContainer.appendChild(msgInfo);
   btnsContainer.appendChild(msgBtn);
 
+}
+
+function removeTransition() {
+  // if (e.propertyName !== "transform") return; // skip if the transition is not related to the transform
+  // this is equal to wenever it has been called, in this case the key
+  // console.log(e);
+  resultMessage.classList.remove("played");
+  resultText.classList.remove("played")
 }
 
 function resetGame() {
@@ -67,12 +77,15 @@ function resetGame() {
   btnsContainer.removeChild(msgBtn);
   btnsContainer.appendChild(btnsMessage);
   btnsContainer.appendChild(btnsDiv);
+  resultDiv.appendChild(resultMessage);
+  resultDiv.appendChild(resultText);
 }
 
 
 function game(playerSelection) {
-  result = playRound(playerSelection, computerPlay());
-  registerResult(result);
+  computerSelection = computerPlay()
+  result = playRound(playerSelection, computerSelection);
+  registerResult(result,playerSelection, computerSelection);
   if (playerScore == 5) {
     endGame('player');
   } else if (computerScore == 5) {
@@ -108,6 +121,8 @@ const scisorBtn = document.getElementById('scisorBtn');
 const pPlayerScore = document.getElementById('playerScore');
 const pComputerScore = document.getElementById('computerScore');
 const resultMessage = document.getElementById('resultMessage');
+const resultText = document.getElementById('resultText');
+const resultDiv = document.querySelector('.result');
 const btnsDiv = document.querySelector('.btnsDiv');
 const btnsMessage = document.querySelector('.btnsMessage');
 const btnsContainer = document.querySelector('.btnsContainer');
@@ -127,6 +142,7 @@ rockBtn.addEventListener('click', () => game('Rock'));
 paperBtn.addEventListener('click', () => game('Paper'));
 scisorBtn.addEventListener('click', () => game('Scisor'));
 msgBtn.addEventListener('click', () => resetGame());
+resultMessage.addEventListener('transitionend',removeTransition)
 
 
 
