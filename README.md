@@ -11,3 +11,5 @@ Function "playerPlay" ask to the player selects between ‘Rock’, ‘Paper’ 
 Function "capitalize" capitalize the first letter of player option.
 Function "game()" register the score and call the previous function. It also present the results to the user.
 
+## V.01
+A UI was created. New functions were created based on events. The js file use DOM to manipulate objects.
